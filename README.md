@@ -9,4 +9,4 @@ To use this problem generator first requires a working installation of *Athena++
 1. Download the full athena-public-version/ directory to your machine
 2. Ensure that your machine has a C++ compiler and Python 2.7+ or Python 3.4+. These are required for compilation and configuration of Athena++, respectively.
 3. The following are optional, but were used in the span of my project:
-  1. aaaa
+    1. aaaa
