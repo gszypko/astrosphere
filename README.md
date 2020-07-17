@@ -15,7 +15,7 @@ To use this problem generator first requires a working installation of *Athena++
     2. For this project, FFTW version 3.3.7 (for self-gravity and turbulence) and HDF5 version 1.8.12 (for high-efficiency data output) were installed to pass this regression script, but were not used otherwise.
 
 ## Installing our Problem Generator and Configuring/Compiling/Running
-1. Add ```astrosphere.cpp``` to the directory ```src/pgen/```
+1. Add ```astrosphere.cpp``` from this repository to the directory ```src/pgen/```
 2. Run the ```configure.py``` script, followed by the pertinent options, to configure the Makefile. ```configure.py -h``` will list all possible options.
     1. For the astrosphere problem generator, run ```configure.py --prob astrosphere -mpi``` to configure using MPI parallelism. ```configure.py --prob astrosphere -mpi -b``` will turn on magnetic fields (not yet used successfully).
 3. ```make clean```, then ```make``` to compile Athena++.
