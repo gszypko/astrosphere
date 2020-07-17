@@ -1,1 +1,1 @@
-readme
+# Astrosphere problem generator for Athena++
