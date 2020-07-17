@@ -1,7 +1,7 @@
 <comment>
 problem   = heliosphere, with solar and ISM parameters
-reference = Gardiner. T.A. & Stone, J.M., JCP, 205, 509 (2005) (for MHD version of test)
-configure = --prob=windblast -b
+reference = 
+configure = --prob=astrosphere -b
 
 <job>
 problem_id = heliosphere      # problem ID: basename of output filenames
@@ -68,7 +68,6 @@ radius     = 40.0   # Radius of the inner sphere (to end of ramp)
 radius_inner       = 1.0
 radius_inner_mag       = 15.0
 b0         = 0.05
-#b0 = 0.000001
 angle      = 0.0
 vx_ISM     = 0.5
 vy_ISM     = 0.0
@@ -77,10 +76,8 @@ d_ISM      = 0.052
 p_ISM      = 0.000983
 mom_rad_wind = 8.75 #all wind variables fixed at inner radius
 d_wind = 1.1
-e_wind = 35.1 #with B energy
-#e_wind = 34.6 #without B energy
+e_wind = 35.1
 b_rad_wind = 0.94
-#b_rad_wind = 0.0
 split_monopole = true
 plasma_sheet = true
 hps_height = 25.0
