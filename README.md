@@ -19,4 +19,5 @@ To use this problem generator first requires a working installation of *Athena++
 2. Run the configure.py script, followed by the pertinent options, to configure the Makefile. configure.py -h will list all possible options.
     1. For the astrosphere.cpp problem generator, run ```configure.py --prob astrosphere -mpi``` to configure using MPI parallelism. ```configure.py --prob astrosphere -mpi -b``` will turn on magnetic fields (not yet used successfully).
 3. ```make clean```, then ```make``` to compile Athena++.
+    1. Note that if you do not have OpenMP (shared memory parallelism) installed and included in your configuration, compiling will flood your terminal with ```unrecognized OpenMP #pragma``` warnings. This is not an issue.
 4. The compiled executable is located at bin/athena.
