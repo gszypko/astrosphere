@@ -6,7 +6,7 @@ These files were created as part of my undergraduate senior thesis in Physics at
 ## Setting up Athena++
 To use this problem generator first requires a working installation of *Athena++*, which can be found at https://github.com/PrincetonUniversity/athena-public-version. More detailed installation information can be found in the accompanying wiki, but we will summarize the steps here.
 
-1. Download the full ```athena-public-version/``` directory to your machine
+1. Download the full ```athena-public-version/``` directory to your machine. All paths specified below are within this directory.
 2. Ensure that your machine has a C++ compiler and Python 2.7+ or Python 3.4+. These are required for compilation and configuration of Athena++, respectively.
 3. The following are optional to install on your machine (on the Discovery cluster, this involved loading the corresponding modules), but were used in the span of this project:
     1. An implementation of MPI-2. We used MPICH version 3.2.1. This allows for distributed-memory parallelization of the simulations.
