@@ -3,9 +3,9 @@
 // Copyright(C) 2014 James M. Stone <jmstone@princeton.edu> and other code contributors
 // Licensed under the 3-clause BSD License, see LICENSE file for details
 //========================================================================================
-//! \file blast.cpp
-//  \brief Problem generator for spherical blast wave problem.  Works in Cartesian,
-//         cylindrical, and spherical coordinates.
+//! \file astrosphere.cpp
+//  \brief Problem generator for spherically symmetric stellar wind with oncoming ISM flow.
+//         Works in Cartesian coordinates. Written by Greg Szypko, based on built-in blast.cpp.
 //
 
 // C headers
