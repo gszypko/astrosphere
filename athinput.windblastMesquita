@@ -1,7 +1,6 @@
 <comment>
-problem   = heliosphere, with solar and ISM parameters
-reference = Gardiner. T.A. & Stone, J.M., JCP, 205, 509 (2005) (for MHD version of test)
-configure = --prob=windblast
+problem   = astrosphere, using Mesquita model inputs
+configure = --prob astrosphere -mpi
 
 <job>
 problem_id = mesquita_astrosphere      # problem ID: basename of output filenames
