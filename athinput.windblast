@@ -1,7 +1,7 @@
 <comment>
 problem   = heliosphere, with solar and ISM parameters
 reference = 
-configure = --prob=astrosphere -b
+configure = --prob astrosphere -mpi
 
 <job>
 problem_id = heliosphere      # problem ID: basename of output filenames
