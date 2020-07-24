@@ -27,7 +27,7 @@ To use this problem generator first requires a working installation of *Athena++
 ## Input Files and Parameter Modes
 1. To run without parallelization, simply execute ```athena -i athinput.inputfile``` where ```athinput.inputfile``` is the name of the input file to be used for the simulation run. This file allows you to specify the parameters of the simulation at run time.
     1. Included in this directory are several examples of these Input Files, set to solar parameters. See the Athena++ documentation to learn about the base functionality of these files.
-2. To use the astrosphere problem generator, several additional parameters need to be specified under the ```<problem>``` header.
+2. To use the astrosphere problem generator, several additional parameters need to be specified under the ```<problem>``` header in the Input File.
     1. ```input_mode``` is an integer that specifies which model, if any, is used to convert stellar parameters to wind parameters. Default is 0, which is for direct wind parameter input (that is, no stellar model used). 1 is for the Wood model, 2 is for the Cohen model, 3 is for the Johnstone model, and 4 is for the Mesquita model (for M-dwarfs).
     2. ```vx_ISM```, ```vy_ISM```, ```vz_ISM```, ```d_ISM```, and ```p_ISM``` specify parameters of the interstellar medium flow: velocity components, density, and pressure, respectively. The ISM flows into the simulation domain from the lower x-boundary.
     3. 
