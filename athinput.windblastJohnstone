@@ -1,7 +1,7 @@
 <comment>
 problem   = heliosphere, with solar and ISM parameters
 reference = Gardiner. T.A. & Stone, J.M., JCP, 205, 509 (2005) (for MHD version of test)
-configure = --prob=windblast -b
+configure = --prob windblast -mpi
 
 <job>
 problem_id = johnstone_heliosphere      # problem ID: basename of output filenames
