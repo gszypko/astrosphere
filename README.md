@@ -1,6 +1,8 @@
 # astrosphere.cpp
 #### an astrosphere problem generator for Athena++
 
+The goal of this project is to simulate the astrosphere of an arbitrary cool dwarf star, using parameters of that star that can be observed or inferred. As such, this problem generator allows the user to either input physical parameters of the stellar wind itself, or parameters of the host star that are then converted to wind parameters using different proposed models.
+
 These files were created as part of my undergraduate senior thesis in Physics at Dartmouth College. This project was advised by Prof. Hans-Reinhard Müller.
 
 ## Setting up Athena++
@@ -14,10 +16,18 @@ To use this problem generator first requires a working installation of *Athena++
     1. Note that if certain optional libraries are missing, parts of this test will yell at you. However, if you do not plan on using functionality related to those libraries, you can ignore this and proceed.
     2. For this project, FFTW version 3.3.7 (for self-gravity and turbulence) and HDF5 version 1.8.12 (for high-efficiency data output) were installed to pass this regression script, but were not used otherwise.
 
-## Installing our Problem Generator and Configuring/Compiling/Running
+## Installing this Problem Generator and Configuring/Compiling
 1. Add ```astrosphere.cpp``` from this repository to the directory ```src/pgen/```
 2. Run the ```configure.py``` script, followed by the pertinent options, to configure the Makefile. ```configure.py -h``` will list all possible options.
     1. For the astrosphere problem generator, run ```configure.py --prob astrosphere -mpi``` to configure using MPI parallelism. ```configure.py --prob astrosphere -mpi -b``` will turn on magnetic fields (not yet used successfully).
 3. ```make clean```, then ```make``` to compile Athena++.
     1. Note that if you do not have OpenMP (shared memory parallelism) installed and included in your configuration, compiling will flood your terminal with ```unrecognized OpenMP #pragma``` warnings. This should not cause any problems, aside from being a nuisance.
 4. The compiled executable is located at ```bin/athena```.
+
+## Input Files and Parameter Modes
+1. To run without parallelization, simply execute ```athena -i athinput.inputfile``` where ```athinput.inputfile``` is the name of the input file to be used for the simulation run. This file allows you to specify the parameters of the simulation at run time.
+    1. Included in this directory are several examples of these Input Files, set to solar parameters. See the Athena++ documentation to learn about the base functionality of these files.
+2. To use the astrosphere problem generator, several additional parameters need to be specified under the ```<problem>``` header.
+    1. ```input_mode``` is an integer that specifies which model, if any, is used to convert stellar parameters to wind parameters. Default is 0, which is for direct wind parameter input (that is, no stellar model used). 1 is for the Wood model, 2 is for the Cohen model, 3 is for the Johnstone model, and 4 is for the Mesquita model (for M-dwarfs).
+    2. ```vx_ISM```, ```vy_ISM```, ```vz_ISM```, ```d_ISM```, and ```p_ISM``` specify parameters of the interstellar medium flow: velocity components, density, and pressure, respectively. The ISM flows into the simulation domain from the lower x-boundary.
+    3. 
