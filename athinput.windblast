@@ -1,5 +1,5 @@
 <comment>
-problem   = heliosphere, with solar and ISM parameters
+problem   = astrosphere, with direct physical parameter input
 reference = 
 configure = --prob astrosphere -mpi
 
