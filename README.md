@@ -27,7 +27,15 @@ To use this problem generator first requires a working installation of *Athena++
 ## Input Files and Parameter Modes
 1. To run without parallelization, simply execute ```athena -i athinput.inputfile``` where ```athinput.inputfile``` is the name of the input file to be used for the simulation run. This file allows you to specify the parameters of the simulation at run time.
     1. Included in this directory are several examples of these Input Files, set to solar parameters. See the Athena++ documentation to learn about the base functionality of these files.
-2. To use the astrosphere problem generator, several additional parameters need to be specified under the ```<problem>``` header in the Input File.
+2. To use the astrosphere problem generator, several additional parameters need to be specified under the ```<problem>``` header in the Input File. In all cases, the following need to be assigned a value:
     1. ```input_mode``` is an integer that specifies which model, if any, is used to convert stellar parameters to wind parameters. Default is 0, which is for direct wind parameter input (that is, no stellar model used). 1 is for the Wood model, 2 is for the Cohen model, 3 is for the Johnstone model, and 4 is for the Mesquita model (for M-dwarfs).
     2. ```vx_ISM```, ```vy_ISM```, ```vz_ISM```, ```d_ISM```, and ```p_ISM``` specify parameters of the interstellar medium flow: velocity components, density, and pressure, respectively. The ISM flows into the simulation domain from the lower x-boundary.
-    3. 
+    3. ```radius``` is the outer radius of the overwriting region at the origin. ```radius_inner``` is the inner radius of the overwriting region. All wind variables are assigned to all points within ```inner_radius```, with a falloff between ```radius_inner``` and ```radius```.
+    4. ```e_wind``` is the total energy density of the wind.
+3. Depending on the specified ```input_mode```, additional parameters must be specified:
+    1. Direct Input: ```mom_rad_wind``` and ```d_wind```, the magnitude of the radial momentum density and the density of the wind, respectively.
+    2. Wood Model: ```R_star_over_solar``` and ```L_x_star_over_solar```, the radius and X-ray luminosity of the star, in solar units.
+    3. Cohen Model:
+    4. Johnstone Model:
+    5. Mesquita Model: 
+    
