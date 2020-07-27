@@ -35,7 +35,7 @@ To use this problem generator first requires a working installation of *Athena++
 3. Depending on the specified ```input_mode```, additional parameters must be specified:
     1. Direct Input: ```mom_rad_wind``` and ```d_wind```, the magnitude of the radial momentum density and the density of the wind, respectively.
     2. Wood Model: ```R_star_over_solar``` and ```L_x_star_over_solar```, the radius and X-ray luminosity of the star, in solar units.
-    3. Cohen Model:
-    4. Johnstone Model:
-    5. Mesquita Model: 
+    3. Cohen Model: ```R_star``` and ```M_star```, the stellar radius and mass in solar units. Optionally, the magnetic parameters ```B_0``` and ```d_Alfven``` can be specified, but are by default set to solar values.
+    4. Johnstone Model: ```R_star``` and ```M_star```, the stellar radius and mass in solar units.
+    5. Mesquita Model: ```R_star``` and ```L_x_star```, the stellar radius in solar units and the stellar X-ray luminosity in erg/s.
     
