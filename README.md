@@ -43,6 +43,7 @@ To use this problem generator first requires a working installation of *Athena++
 
 ## Combining VTK Output Files
 Running with MPI turned on and outputting in the VTK format will produce multiple output files, one corresponding to each MeshBlock in the simulation. Athena++ includes a utility to recombine these files into a single output.
+
     1. ```athena-public-version/vis/vtk``` contains ```join_all_vtk.sh```, a shell script that allows the joining of a sequence of time steps.
     2. To use the shell script, you must first compile the source file ```join_vtk++.c```, located in the same directory, to an executable named ```join_vtk++```.
     3. Then, copy ```join_all_vtk.sh``` as well as the compiled ```join_vtk++``` into your working directory (the same location as your input files and output files) to simplify use.
