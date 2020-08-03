@@ -38,4 +38,12 @@ To use this problem generator first requires a working installation of *Athena++
     3. Cohen Model: ```R_star``` and ```M_star```, the stellar radius and mass in solar units. Optionally, the magnetic parameters ```B_0``` and ```d_Alfven``` can be specified, but are by default set to solar values.
     4. Johnstone Model: ```R_star``` and ```M_star```, the stellar radius and mass in solar units.
     5. Mesquita Model: ```R_star``` and ```L_x_star```, the stellar radius in solar units and the stellar X-ray luminosity in erg/s.
+
+## Using MPI and Combining Output Files
+1. 
+2. Running with MPI turned on and outputting in the VTK format will produce multiple output files, one corresponding to each MeshBlock in the simulation. Athena++ includes a utility to recombine these files into a single output.
+    1. ```athena-public-version/vis/vtk``` contains ```join_all_vtk.sh```, a shell script that allows the joining of a sequence of time steps.
+    2. To use the shell script, you must first compile the source file ```join_vtk++.c```, located in the same directory, to an executable named ```join_vtk++```.
+    3. Then, copy ```join_all_vtk.sh``` as well as the compiled ```join_vtk++``` into your working directory (the same location as your input files and output files) to simplify use.
+    4. See ```join_all_vtk.sh``` for usage of the script. As an example: for an output file named ```some_output.block0.out1.00000.vtk```, ```block0``` indicates the index of the file's MeshBlock, ```out1``` indicates the index of the set of output parameters, and ```00000``` indicates the time step. If there are 16 MeshBlocks (```block0``` through ```block15```) and 30 timesteps (```00000``` through ```00029```), then execute ```./join_all_vtk.sh some_output 1 15 29```. This will produce a series of files such as ```some_output.joined.out1.00000.vtk``` where each time step has been reduced to a single joined file. You may then safely delete all of the individual block files.
     
