@@ -1,0 +1,24 @@
+#!/bin/bash -l
+# declare a name for this job to be sample_job
+#PBS -N my_parallel_job
+
+# request the default queue for this job
+#PBS -q default
+
+# request a total of 32 processors for this job (2 nodes and 16 processors per node)
+#PBS -l nodes=1:ppn=8
+# request 4 hours of wall time
+# Default is 1 hour without this directive
+#PBS -l walltime=04:00:00
+
+# mail is sent to you when the job starts and when it terminates or aborts
+#PBS -m bea
+
+# specify your email address
+#PBS -M Gregory.M.Szypko.20@dartmouth.edu
+
+#change to the directory where you submitted the job
+cd $PBS_O_WORKDIR
+
+# include the relative path to the name of your MPI program
+mpirun -np 8 -machinefile $PBS_NODEFILE ~/athena-public-version/bin/athena -i athinput.windblast > log_default
