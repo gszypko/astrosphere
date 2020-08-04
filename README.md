@@ -40,7 +40,9 @@ To use this problem generator first requires a working installation of *Athena++
     5. Mesquita Model: ```R_star``` and ```L_x_star```, the stellar radius in solar units and the stellar X-ray luminosity in erg/s.
 
 ## Running with MPI
-Included in this directory is a sample scheduler file used to submit a parallel run to Dartmouth's Discovery Cluster. The command ```mksub``` submits the job to the scheduler. For instance, to submit the file ```runjob.parallel```, execute ```mksub runjob.parallel```. For more information, see https://rc.dartmouth.edu/index.php/using-discovery/scheduling-jobs/multi-core-job-examples/.
+Included in this directory is a sample scheduler file used to submit a parallel run to Dartmouth's Discovery Cluster. The command ```mksub``` submits the job to the scheduler. For instance, to submit the file ```runjob.parallel```, execute ```mksub runjob.parallel```. Be sure to modify ```runjob.parallel``` to include your email address to send notifications, and the correct ```athinput``` input file.
+
+For more information, see https://rc.dartmouth.edu/index.php/using-discovery/scheduling-jobs/multi-core-job-examples/.
 
 ## Combining VTK Output Files
 Running with MPI turned on and outputting in the VTK format will produce multiple output files at each time step, one corresponding to each MeshBlock in the simulation. Athena++ includes a utility to recombine these files into a single output.
