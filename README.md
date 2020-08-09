@@ -54,4 +54,22 @@ Running with MPI turned on and outputting in the VTK format will produce multipl
     1. For an output file named ```some_output.block0.out1.00000.vtk```, ```block0``` indicates the index of the file's MeshBlock, ```out1``` indicates the index of the set of output parameters, and ```00000``` indicates the time step.
     2. If there are 16 MeshBlocks (```block0``` through ```block15```) and 30 timesteps (```00000``` through ```00029```), then execute ```./join_all_vtk.sh some_output 1 15 29```. This will produce a series of files such as ```some_output.joined.out1.00000.vtk``` where each time step has been reduced to a single joined file.
     3. You may then safely delete all of the individual block files, which remain after being joined.
+
+## Visualizing Results Using ParaView
+The open-source software ParaView can be used to visualize the results of Athena++ simulations. ParaView is available at https://www.paraview.org/.
+
+This software offers a Client/Server mode that allows you (Client) to access files located in a remote machine (Server) using a locally running instance of ParaView. It can be set up as follows:
+
+1. Install and open ParaView on your local machine.
+2. Navigate to ```File > Connect```, then click ```Add Server```.
+3. Provide a name for the server in the ```Name``` field. In the ```Host``` field, provide the DNS name of the remote machine. For us, this was ```discovery7.hpcc.dartmouth.edu```.
+4. Click ```Configure```, then ```Save```.
+5. Ensure that ParaView is also installed on the remote machine.
+
+The local client is now configured to connect to the remote host. To do this:
+
+1. Connect to the remote machine and execute the command ```pvserver``` from the remote machine. This will launch the Server side of the Client/Server connection.
+2. On the local machine, open ParaView and navigate to ```File > Connect```.
+3. Select the appropriate server from the list (the one configured in the earlier steps) and click ```Connect```.
+4. You should now be able to access files on the remote machine as if they were on the local machine by navigating to ```File > Open```.
     
